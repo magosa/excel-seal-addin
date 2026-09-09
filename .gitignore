@@ -1,0 +1,15 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+公開/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Signing key (do not commit private keys)
+*.pfx
+
+# Release archives (built artifacts, not source)
+*.zip

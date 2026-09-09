@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="SealAddInTab" label="電子印影">
+        <group id="SealAddInGroup" label="画像配置・電子押印ツール">
+          <toggleButton id="ToggleTaskPaneButton"
+                        label="ツールを表示"
+                        size="large"
+                        imageMso="StampTool"
+                        getPressed="GetTaskPanePressed"
+                        onAction="OnToggleTaskPane" />
+          <button id="OptionsButton"
+                  label="オプション設定"
+                  size="large"
+                  imageMso="AccountSettings"
+                  onAction="OnOpenOptions" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
