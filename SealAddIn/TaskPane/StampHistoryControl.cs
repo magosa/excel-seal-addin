@@ -19,6 +19,9 @@ namespace SealAddIn.TaskPane
         private void BuildUi()
         {
             Dock = DockStyle.Fill;
+            // Officeのグレー系/ダークテーマ配下でも文字が読めるよう、テーマに依存しない配色を明示する。
+            BackColor = System.Drawing.Color.White;
+            ForeColor = System.Drawing.Color.Black;
 
             var topRow = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(6) };
             var refreshButton = new Button { Text = "再読み込み", AutoSize = true };

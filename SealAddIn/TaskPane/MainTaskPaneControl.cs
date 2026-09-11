@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SealAddIn.TaskPane
@@ -12,13 +13,16 @@ namespace SealAddIn.TaskPane
         public MainTaskPaneControl()
         {
             Dock = DockStyle.Fill;
+            // Officeのグレー系/ダークテーマ配下でも文字が読めるよう、テーマに依存しない配色を明示する。
+            BackColor = Color.White;
+            ForeColor = Color.Black;
 
             var imageLibraryControl = new ImageLibraryControl { Dock = DockStyle.Fill };
             shapeEditorControl = new ShapeEditorControl { Dock = DockStyle.Fill };
             var stampGeneratorControl = new StampGeneratorControl { Dock = DockStyle.Fill };
             stampHistoryControl = new StampHistoryControl { Dock = DockStyle.Fill };
 
-            tabControl = new TabControl { Dock = DockStyle.Fill };
+            tabControl = new TabControl { Dock = DockStyle.Fill, BackColor = Color.White, ForeColor = Color.Black };
             tabControl.TabPages.Add(BuildPage("画像ライブラリ", imageLibraryControl));
             tabControl.TabPages.Add(BuildPage("サイズ・位置編集", shapeEditorControl));
             tabControl.TabPages.Add(BuildPage("スタンプ作成", stampGeneratorControl));
@@ -30,7 +34,7 @@ namespace SealAddIn.TaskPane
 
         private static TabPage BuildPage(string title, Control content)
         {
-            var page = new TabPage(title);
+            var page = new TabPage(title) { BackColor = Color.White, ForeColor = Color.Black };
             page.Controls.Add(content);
             return page;
         }
